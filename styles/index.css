@@ -1,21 +1,12 @@
 :root {
-    /* Primary Colors */
-    --primary-blue: #0044cc; /* Use for headers, primary buttons, and important highlights */
-    --primary-dark-gray: #333333; /* Use for main backgrounds or sections that need a professional look */
-
-    /* Secondary Colors */
-    --secondary-light-blue: #66ccff; /* Use for secondary highlights, links, and interactive elements */
-    --secondary-green: #00cc66; /* Use for success messages, confirmation buttons, and positive indicators */
-
-    /* Accent Colors */
-    --accent-orange: #ff6600; /* Use for call-to-actions, warnings, and important alerts */
-    --accent-light-gray: #f2f2f2; /* Use for background sections, cards, and to provide contrast */
-
-    /* Text Colors */
-    --text-white: #ffffff; /* Use for text on dark backgrounds to ensure readability */
-    --text-dark-gray: #4d4d4d; /* Use for standard text on light backgrounds for readability */
-
-    /* Fonts */
+    --primary-blue: #0044cc;
+    --primary-dark-gray: #333333;
+    --secondary-light-blue: #66ccff;
+    --secondary-green: #00cc66;
+    --accent-orange: #ff6600;
+    --accent-light-gray: #f2f2f2;
+    --text-white: #ffffff;
+    --text-dark-gray: #4d4d4d;
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Roboto', sans-serif;
     --font-p-li: 'Open Sans', sans-serif;
@@ -27,6 +18,7 @@
     padding: 0;
     box-sizing: border-box;
     font-family: Arial, sans-serif;
+    list-style: none;
 }
 
 body {
@@ -45,29 +37,77 @@ nav, .button {
     font-family: var(--font-nav-button);
 }
 
-.layout-grid {
-    display: grid;
-    grid-template-columns: 0fr 1fr; /* Sidebar initially hidden */
-    height: 100vh; /* Optional: to ensure the grid items take up full viewport height */
-    transition: grid-template-columns 0.3s ease; /* Smooth transition */
+.layout {
+    display: flex;
 }
+/* sidebar */
 
 .sidebar {
-    background-color: var(--primary-blue);
-    color: var(--text-white);
-    overflow: hidden; /* Ensure content doesn’t overflow */
-    transition: transform 0.3s ease; /* Smooth transition */
-    transform: translateX(0); /* Default position */
+    width: 250px;
+    height: 100vh;
+    background-color: #333;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: -250px; /* Initially hidden */
+    transition: left 0.3s ease;
 }
+
+.sidebar.open {
+    left: 0; /* Show sidebar */
+}
+
+/* container */
 
 .container {
+    margin-left: 0;
+    transition: margin-left 0.3s ease;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--text-white);
+}
+
+.container.expand {
+    margin-left: 250px; /* Space for the sidebar */
+    transition: margin-left 0.3s ease;
+    height: 100vh;
+    width: 100%;
+    background-color: var(--text-white);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    color: var(--text-white);
     background-color: var(--primary-dark-gray);
+    position: fixed;
+    width: 100%;
+    height: fit-content;
 }
 
-.sidebar.hidden {
-    transform: translateX(-100%); /* Move out of view */
+.navbar i {
+    cursor: pointer;
+    font-size: 30px;
 }
 
-.container.active {
-    grid-template-columns: 1fr 0fr; /* Expand container to full width */
+.nav-links{
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    justify-items: center;
+    font-size: 18px;
+    cursor: pointer;
+    color: var(--accent-light-gray);
+    padding-right: 50px;
+}
+
+.nav-links li{
+    transition: 0.3s ease;
+}
+
+.nav-links li:hover{
+    text-decoration: underline;
+    padding-bottom: 10px;
+    padding-right: 10px;
 }
