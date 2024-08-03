@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root {
+    --highlight-color: #c9ffe5;
+    --background-color: white;
+    --text-color: black;
+    --text-secondary-color: white;
+    --text-secondary-color: white;
+    --secondary-accent: #FF5722;
+    --border-color: #E0E0E0;
+    --subtle-background: #F0F0F0;
+    --button-hover: #81C784;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    background-image: url('/images/cyber1.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.container-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* Adjust spacing as needed */
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.text {
+    max-width: 300px; /* Adjust as needed */
+    color: var(--text-color);
+    background-color: rgba(236, 236, 236, 0.431);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.text h2 {
+    margin-bottom: 10px;
+}
+
+.text p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    position: relative;
+    z-index: 2; /* Ensure buttons are on top of SignLog */
+}
+
+.signUp, .Login {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    border-radius: 5px;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.signUp {
+    border-right: none;
+    background-color: var(--subtle-background);
+}
+
+.Login {
+    border-left: none;
+    background-color: var(--subtle-background);
+}
+
+.signUp.active, .Login.active {
+    background-color: var(--text-secondary-color);
+    transition: 0.3s ease;
+}
+
+.signUp:hover, .Login:hover {
+    background-color: var(--secondary-accent);
+    color: var(--background-color);
+}
+
+.buttons h1 {
+    font-size: 12px;
+}
+
+.buttons i {
+    font-size: 10px;
+}
+
+.SignLog {
+    display: flex;
+    width: 500px;
+    height: 300px; /* Adjust as needed */
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Airborne effect */
+    overflow: hidden;
+    background-color: rgba(236, 236, 236, 0.431);
+    position: relative;
+    z-index: 1; /* Ensure it is below the buttons */
+}
+
+.sign-up-panel, .log-in-panel {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sign-up-panel {
+    background-color: var(--text-secondary-color); /* Default color for sign-up */
+}
+
+.log-in-panel {
+    background-color: var(--background-color); /* Default color for login */
+}
+
+.SignLog.active-left .sign-up-panel {
+    background-color: var(--subtle-background);
+    border-radius: 80px 0;
+}
+
+.SignLog.active-left .log-in-panel {
+    background-color: var(--background-color);
+    transform: translateX(100%);
+}
+
+.SignLog.active-right .sign-up-panel {
+    background-color: var(--background-color);
+    transform: translateX(-100%);
+}
+
+.SignLog.active-right .log-in-panel {
+    background-color: var(--subtle-background);
+    border-radius: 0 80px;
+}
+
+.sign-up-panel, .log-in-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100%;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.sign-up-panel {
+    background-color: var(--text-secondary-color);
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.log-in-panel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    border: 1px solid var(--border-color);
+    box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Additional styling for inputs and labels within the panels */
+/* Centering the inputs within the panels */
+.sign-up-panel input[type="text"], 
+.sign-up-panel input[type="password"],
+.log-in-panel input[type="text"], 
+.log-in-panel input[type="password"] {
+    border: 1px solid var(--border-color);
+    border-radius: 20px;
+    padding: 10px;
+    margin: 0 auto 15px auto; /* Center and add spacing below */
+    font-size: 14px;
+    color: var(--text-color); /* Change text color to match */
+    background-color: var(--background-color);
+    width: 80%; /* Adjust width as needed */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    text-align: center; /* Center text inside input */
+}
+
+/* Change placeholder color to black */
+.sign-up-panel input[type="text"]::placeholder, 
+.sign-up-panel input[type="password"]::placeholder,
+.log-in-panel input[type="text"]::placeholder, 
+.log-in-panel input[type="password"]::placeholder {
+    color: black;
+}
+
+/* Ensure alignment of the input fields in both panels */
+.sign-up-panel, .log-in-panel {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    height: 100%;
+    align-items: center; /* Center content horizontally */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+button {
+    border: 1px solid var(--border-color);
+    border-radius: 20px; /* Same as input fields */
+    padding: 10px;
+    font-size: 14px; /* Same as input fields */
+    color: var(--text-color); /* Change text color to match */
+    background-color: var(--background-color);
+    width: 80%; /* Same width as input fields */
+    cursor: pointer;
+    text-align: center; /* Center text inside button */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover effect for buttons */
+button:hover {
+    background-color: var(--secondary-accent);
+    color: var(--background-color);
+    border-color: var(--secondary-accent);
+}
+
+.forgot-password {
+    margin-top: 15px;
+    font-size: 14px;
+    color: blue;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+    font-size: 16px;
+    font-weight: bold;
+}

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign-In</title>
+    <link rel="stylesheet" href="./Authentication.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div class="container-wrapper">
+        <div class="text">
+            <h2>Welcome to Cyberware</h2>
+            <p>Cyberware aims to educate people on cyber attacks and how to stay safe. Join us to learn the best
+                practices and keep your digital life secure.</p>
+        </div>
+        <div class="container">
+            <div class="buttons">
+                <div class="signUp active" onclick="showSignUp()">
+                    <h1>Sign-Up</h1>
+                    <i class="fas fa-key"></i>
+                </div>
+                <div class="Login" onclick="showLogin()">
+                    <h1>Log-In</h1>
+                    <i class="fas fa-sign-in-alt"></i>
+                </div>
+            </div>
+            <div class="SignLog active-left">
+                <div class="sign-up-panel active" id="sign-up-panel">
+                    <input type="text" id="name-sign" placeholder="Name">
+                    <input type="text" id="email-signup" placeholder="Email">
+                    <input type="password" id="password-signup" placeholder="Password">
+                    <input type="password" id="Re-password-signup" placeholder="Re-enter Password">
+                    <button onclick="signIn()">Sign-In</button>
+                </div>
+                <div class="log-in-panel" id="log-in-panel">
+                    <input type="text" id="email-login" placeholder="Enter Your Email">
+                    <input type="password" id="password-login" placeholder="Enter a Password">
+                    <button onclick="login()">Login</button>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./Authentication.js"></script>
+</body>
+
+</html>
