@@ -1,0 +1,73 @@
+:root {
+    /* Primary Colors */
+    --primary-blue: #0044cc; /* Use for headers, primary buttons, and important highlights */
+    --primary-dark-gray: #333333; /* Use for main backgrounds or sections that need a professional look */
+
+    /* Secondary Colors */
+    --secondary-light-blue: #66ccff; /* Use for secondary highlights, links, and interactive elements */
+    --secondary-green: #00cc66; /* Use for success messages, confirmation buttons, and positive indicators */
+
+    /* Accent Colors */
+    --accent-orange: #ff6600; /* Use for call-to-actions, warnings, and important alerts */
+    --accent-light-gray: #f2f2f2; /* Use for background sections, cards, and to provide contrast */
+
+    /* Text Colors */
+    --text-white: #ffffff; /* Use for text on dark backgrounds to ensure readability */
+    --text-dark-gray: #4d4d4d; /* Use for standard text on light backgrounds for readability */
+
+    /* Fonts */
+    --font-heading: 'Montserrat', sans-serif;
+    --font-body: 'Roboto', sans-serif;
+    --font-p-li: 'Open Sans', sans-serif;
+    --font-nav-button: 'Lato', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    font-family: var(--font-body);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+}
+
+p, li {
+    font-family: var(--font-p-li);
+}
+
+nav, .button {
+    font-family: var(--font-nav-button);
+}
+
+.layout-grid {
+    display: grid;
+    grid-template-columns: 0fr 1fr; /* Sidebar initially hidden */
+    height: 100vh; /* Optional: to ensure the grid items take up full viewport height */
+    transition: grid-template-columns 0.3s ease; /* Smooth transition */
+}
+
+.sidebar {
+    background-color: var(--primary-blue);
+    color: var(--text-white);
+    overflow: hidden; /* Ensure content doesn’t overflow */
+    transition: transform 0.3s ease; /* Smooth transition */
+    transform: translateX(0); /* Default position */
+}
+
+.container {
+    background-color: var(--primary-dark-gray);
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%); /* Move out of view */
+}
+
+.container.active {
+    grid-template-columns: 1fr 0fr; /* Expand container to full width */
+}
