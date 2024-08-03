@@ -1,0 +1,222 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+
+:root {
+    --highlight-color: #c9ffe5;
+    --background-color: white;
+    --text-color: black;
+    --text-secondary-color: white;
+    --primary-accent: #4CAF50;
+    --secondary-accent: #FF5722;
+    --border-color: #E0E0E0;
+    --subtle-background: #F0F0F0;
+    --button-hover: #81C784;
+}
+
+body {
+    height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.Navbar {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    color: var(--text-secondary-color);
+    justify-content: space-between;
+    background-color: var(--primary-accent);
+}
+
+.left {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.left img {
+    width: 40px;
+    height: 40px;
+}
+
+.left h1 {
+    font-size: 24px;
+    color: var(--text-secondary-color);
+}
+
+.left p {
+    font-size: 16px;
+}
+
+.Navbar .text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary-color);
+}
+
+.Navbar .center {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.center li {
+    cursor: pointer;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+}
+
+.center li:hover {
+    color: var(--secondary-accent);
+    padding-left: 10px;
+}
+
+.right button {
+    height: 40px;
+    width: 100px;
+    border-radius: 20px;
+    background-color: var(--subtle-background);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.right button:hover {
+    color: var(--text-color);
+    background-color: var(--button-hover);
+    font-weight: 600;
+}
+
+.hero {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    height: 400px;
+    width: 100%;
+    background-image: url('/images/cyber.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: var(--text-secondary-color);
+    text-align: center;
+}
+
+.hero-text {
+    max-width: 60%;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin: 20px 0;
+}
+
+.hero button {
+    height: 50px;
+    width: 180px;
+    border: 1px solid var(--text-color);
+    border-radius: 25px;
+    background-color: var(--highlight-color);
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s ease, border 0.3s ease;
+}
+
+.hero button:hover {
+    border: 2px solid var(--border-color);
+    background-color: var(--button-hover);
+}
+
+.hero-category {
+    padding: 20px;
+    background-color: var(--subtle-background);
+}
+
+.hero-category-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.hero-category-grid .classes,
+.hero-category-grid .Software,
+.hero-category-grid .practices {
+    flex: 1;
+    background-color: var(--highlight-color);
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.hero-category-grid img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.hero-offers {
+    padding: 20px;
+}
+
+.hero-offers h1 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.hero-offers .option1,
+.hero-offers .option2,
+.hero-offers .option3 {
+    background-color: var(--highlight-color);
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.hero-offers button {
+    margin-top: 10px;
+    background-color: var(--primary-accent);
+    color: var(--text-secondary-color);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hero-offers button:hover {
+    background-color: var(--secondary-accent);
+}
+
+.about {
+    padding: 20px;
+    background-color: var(--subtle-background);
+    text-align: center;
+}
+
+.about button {
+    background-color: var(--primary-accent);
+    color: var(--text-secondary-color);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.about button:hover {
+    background-color: var(--secondary-accent);
+}
+
+.footer {
+    background-color: var(--primary-accent);
+    padding: 20px;
+    text-align: center;
+    color: var(--text-secondary-color);
+}
