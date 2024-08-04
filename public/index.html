@@ -20,10 +20,9 @@
             </div>
         </div>
         <ul class="center">
-            <li href="#">Home</li>
-            <li href="#">Courses</li>
-            <li href="#">Prices</li>
-            <li href="#">Tools/Software</li>
+            <li onclick="home()" href="#">Home</li>
+            <li onclick="Course()" href="#">Courses</li>
+            <li onclick="Software()" href="#">Tools/Software</li>
             <i class="fa-solid fa-bell"></i>
         </ul>
         <div class="right">
@@ -33,91 +32,251 @@
     <div class="hero">
         <div class="hero-text">
             <p>Knowlege is key to safely</p>
-            <h1>What you learn today may save you tomorrow</h1>
+            <h1>What you learn today may save your information tomorrow</h1>
         </div>
-        <button>Get Started Today</button>
+        <button onclick="scrollToCategory()">Get Started Today</button>
     </div>
-    <div class="hero-category">
+    <div class="hero-category" id="hero-category">
         <div class="hero-category-grid">
-            <div class="classes">
-                <h2>classes</h2>
-                <img src="" alt="">
-                <h3></h3>
-                <p></p>
-                <button>Read More <i class="fa-solid fa-arrow-right"></i></button>
+            <div class="training">
+                <h2>Cybersecurity Training</h2>
+                <p>
+                    Cybersecurity training involves educating employees about the latest security threats, best
+                    practices, and
+                    handling sensitive information securely. This includes phishing awareness, password management, and
+                    recognizing
+                    suspicious activities.
+                </p>
+                <button
+                    onclick="window.location.href='https://www.theknowledgeacademy.com/za/courses/cyber-security-training/'">Read
+                    More <i class="fa-solid fa-arrow-right"></i></button>
             </div>
             <div class="Software">
-                <h2>Software</h2>
-                <img src="" alt="">
-                <h3></h3>
-                <p></p>
-                <button>Read More <i class="fa-solid fa-arrow-right"></i></button>
+                <h2>Cybersecurity Software Solutions</h2>
+                <p>
+                    Cybersecurity software solutions include antivirus programs, firewalls, intrusion detection systems,
+                    and
+                    encryption tools designed to protect a company's digital assets from malicious attacks.
+                </p>
+                <button onclick="window.location.href='../Pages/Store/Store.html'">Visit Store<i
+                        class="fa-solid fa-arrow-right"></i></button>
             </div>
             <div class="practices">
-                <h2>Practices</h2>
-                <img src="" alt="">
-                <h3></h3>
-                <p></p>
-                <button>Read More <i class="fa-solid fa-arrow-right"></i></button>
-            </div>
-        </div>
-        <div class="hero-offers">
-            <h1>Fundmentals Of Cyber Security</h1>
-            <div class="option1">
-                <h2>Confidentiality</h2>
-                <p>Protect sensitive data from unauthorized access using encryption, strong password policies, and
-                    access controls.
+                <h2>Cybersecurity Best Practices</h2>
+                <p>
+                    Cybersecurity best practices involve strategies and protocols designed to enhance overall security
+                    posture. This
+                    includes regular software updates, strong password policies, and secure network configurations.
                 </p>
-                <button>Start Now</button>
-            </div>
-            <div class="option2">
-                <h2>Integrity</h2>
-                <p>Ensure data accuracy and prevent unauthorized alterations by using hashing, version control, and
-                    regular
-                    integrity checks.</p>
-                <button>Start Now</button>
-            </div>
-            <div class="option3">
-                <h2>Availability</h2>
-                <p>Maintain access to systems and data through regular backups, system redundancy, and a disaster
-                    recovery plan.</p>
-                <button>Start Now</button>
+                <button
+                    onclick="window.location.href='https://link.springer.com/chapter/10.1007/978-3-030-56405-6_6'">Read
+                    More <i class="fa-solid fa-arrow-right"></i></button>
             </div>
 
         </div>
+        <div class="hero-offers">
+            <h1>Fundamentals Of Cyber Security</h1>
+            <div class="option1">
+                <h2>Confidentiality</h2>
+                <p id="confidentiality-summary">Protect sensitive data from unauthorized access using encryption, strong
+                    password policies, and access controls.</p>
+                <p id="confidentiality-full" style="display: none;">
+                    <strong>Confidentiality</strong> is a core principle of cybersecurity that ensures sensitive
+                    information is
+                    only accessible to authorized individuals. This involves using various techniques to prevent
+                    unauthorized
+                    access, including:
+                <ul>
+                    <li><strong>Encryption:</strong> Encrypting data makes it unreadable to anyone who doesn't have the
+                        decryption key, thus protecting data both at rest and in transit.</li>
+                    <li><strong>Strong Password Policies:</strong> Enforcing complex password requirements helps prevent
+                        unauthorized access through brute force or credential stuffing attacks.</li>
+                    <li><strong>Access Controls:</strong> Implementing role-based access controls ensures that users
+                        only have
+                        access to the information necessary for their role.</li>
+                </ul>
+                Effective confidentiality measures safeguard against data breaches, which could lead to financial loss,
+                reputational damage, or legal consequences. For businesses, maintaining confidentiality is crucial for
+                protecting customer trust and complying with regulations such as GDPR or HIPAA.
+                </p>
+                <button onclick="toggleVisibility('confidentiality')">Read More <i
+                        class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="option2">
+                <h2>Integrity</h2>
+                <p id="integrity-summary">Ensure data accuracy and prevent unauthorized alterations by using hashing,
+                    version
+                    control, and regular integrity checks.</p>
+                <p id="integrity-full" style="display: none;">
+                    <strong>Integrity</strong> ensures that data remains accurate and unaltered during storage,
+                    transmission,
+                    and processing. It involves several key practices:
+                <ul>
+                    <li><strong>Hashing:</strong> Hash functions generate a unique value (hash) for data, which helps
+                        detect any
+                        changes or corruption.</li>
+                    <li><strong>Version Control:</strong> Version control systems track changes to data and documents,
+                        enabling
+                        recovery of previous versions if needed.</li>
+                    <li><strong>Regular Integrity Checks:</strong> Performing regular checks ensures that data has not
+                        been
+                        tampered with and remains consistent over time.</li>
+                </ul>
+                Ensuring data integrity is vital for maintaining trust and operational efficiency. Inaccurate or
+                corrupted data
+                can lead to erroneous decisions, loss of business, and legal issues. Businesses must implement robust
+                integrity
+                controls to prevent data breaches and ensure reliability.
+                </p>
+                <button onclick="toggleVisibility('integrity')">Read More <i
+                        class="fa-solid fa-arrow-right"></i></button>
+            </div>
+            <div class="option3">
+                <h2>Availability</h2>
+                <p id="availability-summary">Maintain access to systems and data through regular backups, system
+                    redundancy, and
+                    a disaster recovery plan.</p>
+                <p id="availability-full" style="display: none;">
+                    <strong>Availability</strong> ensures that systems and data are accessible when needed. Key
+                    strategies for
+                    maintaining availability include:
+                <ul>
+                    <li><strong>Regular Backups:</strong> Backing up data frequently helps recover information in case
+                        of data
+                        loss or system failure.</li>
+                    <li><strong>System Redundancy:</strong> Implementing redundant systems and infrastructure ensures
+                        that
+                        services remain operational if primary systems fail.</li>
+                    <li><strong>Disaster Recovery Plan:</strong> A well-defined disaster recovery plan outlines
+                        procedures for
+                        quickly restoring systems and data after a significant disruption.</li>
+                </ul>
+                Availability is critical for businesses to avoid downtime and maintain operational continuity.
+                Disruptions can
+                lead to lost revenue, decreased customer satisfaction, and reputational damage. Proper availability
+                measures
+                help ensure that services are consistently provided without interruption.
+                </p>
+                <button onclick="toggleVisibility('availability')">Read More <i
+                        class="fa-solid fa-arrow-right"></i></button>
+            </div>
+        </div>
+
         <div class="hero-offers">
             <h1>Phishing Simulation Campaigns</h1>
             <div class="option1">
                 <h2>Understand Phishing Threats</h2>
-                <p>Learn about the different types of phishing attacks and how they can compromise your information.
-                    Recognize
-                    common signs and tactics used by attackers.</p>
-                <button>Start Now</button>
+                <p id="phishing-threats-summary">Learn about the different types of phishing attacks and how they can
+                    compromise
+                    your information. Recognize common signs and tactics used by attackers.</p>
+                <p id="phishing-threats-full" style="display: none;">
+                    <strong>Phishing Threats</strong> are deceptive practices used by attackers to trick individuals
+                    into
+                    revealing sensitive information. Key aspects to understand include:
+                <ul>
+                    <li><strong>Types of Phishing:</strong> Phishing can take various forms, including email phishing,
+                        spear
+                        phishing, and vishing (voice phishing).</li>
+                    <li><strong>Common Tactics:</strong> Attackers often use urgent or threatening language, fake email
+                        addresses, and malicious links to deceive victims.</li>
+                    <li><strong>Signs of Phishing:</strong> Common signs include poor grammar, unexpected attachments,
+                        and
+                        requests for personal information.</li>
+                </ul>
+                Recognizing phishing threats is essential for preventing data breaches and protecting personal and
+                business
+                information. Awareness and training help employees avoid falling victim to these attacks and reduce
+                overall
+                risk.
+                </p>
+                <button onclick="toggleVisibility('phishing-threats')">Read More <i
+                        class="fa-solid fa-arrow-right"></i></button>
             </div>
             <div class="option2">
                 <h2>Simulate Phishing Attacks</h2>
-                <p>Participate in simulated phishing campaigns to experience real-life scenarios. This helps identify
-                    vulnerabilities and enhances your ability to detect phishing attempts.</p>
-                <button>Start Now</button>
+                <p id="simulate-attacks-summary">Participate in simulated phishing campaigns to experience real-life
+                    scenarios.
+                    This helps identify vulnerabilities and enhances your ability to detect phishing attempts.</p>
+                <p id="simulate-attacks-full" style="display: none;">
+                    <strong>Simulating Phishing Attacks</strong> provides valuable hands-on experience in recognizing
+                    and
+                    responding to phishing attempts. Key benefits include:
+                <ul>
+                    <li><strong>Real-Life Scenarios:</strong> Simulations mimic real-world phishing attacks, helping
+                        individuals
+                        practice detecting and handling such threats.</li>
+                    <li><strong>Identifying Vulnerabilities:</strong> Simulations reveal weaknesses in security
+                        awareness and
+                        response, allowing for targeted training and improvements.</li>
+                    <li><strong>Enhanced Detection Skills:</strong> Regular participation in simulations improves
+                        individuals'
+                        ability to identify and report phishing attempts.</li>
+                </ul>
+                By experiencing simulated attacks, individuals and organizations can strengthen their defenses against
+                actual
+                phishing threats and improve overall cybersecurity posture.
+                </p>
+                <button onclick="toggleVisibility('simulate-attacks')">Read More <i
+                        class="fa-solid fa-arrow-right"></i></button>
             </div>
             <div class="option3">
                 <h2>Improve Response Skills</h2>
-                <p>Develop and practice effective responses to phishing attempts. Learn how to report suspicious emails
-                    and take
-                    immediate action to protect your information.</p>
-                <button>Start Now</button>
+                <p id="response-skills-summary">Develop and practice effective responses to phishing attempts. Learn how
+                    to
+                    report suspicious emails and take immediate action to protect your information.</p>
+                <p id="response-skills-full" style="display: none;">
+                    <strong>Improving Response Skills</strong> involves training individuals to react effectively to
+                    phishing
+                    attempts. Key elements include:
+                <ul>
+                    <li><strong>Effective Response Techniques:</strong> Training covers how to respond to phishing
+                        attempts,
+                        including verifying the legitimacy of requests and avoiding clicking on malicious links.</li>
+                    <li><strong>Reporting Suspicious Emails:</strong> Employees should know how to report suspicious
+                        emails to
+                        the appropriate channels within their organization.</li>
+                    <li><strong>Immediate Actions:</strong> Knowing how to act quickly to mitigate potential damage,
+                        such as
+                        changing passwords and notifying IT teams, is crucial.</li>
+                </ul>
+                Developing strong response skills reduces the risk of successful phishing attacks and helps
+                organizations manage
+                incidents more effectively. Regular practice and awareness are key to maintaining a strong security
+                posture.
+                </p>
+                <button onclick="toggleVisibility('response-skills')">Read More <i
+                        class="fa-solid fa-arrow-right"></i></button>
             </div>
         </div>
-    </div>
-    <div class="about">
-        <h1>About CyberShield</h1>
-        <p></p>
-        <button>Read More</button>
-    </div>
-    <div class="footer">
-    </div>
+        <div class="about">
+            <h1>About CyberShield</h1>
+            <p id="summary">CyberShield is dedicated to providing comprehensive cybersecurity solutions for businesses
+                of all
+                sizes. Our mission is to protect your digital assets through cutting-edge technology and expert
+                guidance.</p>
+            <p id="full" style="display: none;">CyberShield offers a range of services including cybersecurity training,
+                threat
+                analysis, and tailored security solutions. We aim to empower businesses with the knowledge and tools
+                needed to
+                safeguard their operations from ever-evolving cyber threats. Our team of experts works closely with
+                clients to
+                identify vulnerabilities, implement robust security measures, and ensure compliance with industry
+                standards.</p>
+            <button onclick="toggleAbout()">Read More</button>
+        </div>
+        <div class="footer">
+            <div class="footer-content">
+                <p>&copy; 2024 CyberShield. All rights reserved.</p>
+                <ul class="footer-links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
 
-    <script src="./index.js"></script>
+
+        <script src="./index.js"></script>
 </body>
 
 </html>
