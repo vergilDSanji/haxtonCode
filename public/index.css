@@ -229,8 +229,14 @@ body {
     transition: background-color 0.3s ease;
 }
 
-.about button:hover {
-    background-color: var(--secondary-accent);
+.about button {
+    background-color: var(--primary-accent);
+    color: var(--text-secondary-color);
+    border: none;
+    border-radius: 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 /* Footer Styling */

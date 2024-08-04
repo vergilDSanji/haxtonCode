@@ -13,25 +13,30 @@
 <body>
     <div class="Navbar">
         <div class="left">
-            <img src="../images/logo.jpg" alt="">
+            <img src="../../images/logo.jpg" alt="">
             <div class="text">
                 <h1>CyberShield</h1>
                 <p>We Attack Back</p>
             </div>
         </div>
         <ul class="center">
-            <li><a href="#">Home</a></li>
-            <li><a href="#">Courses</a></li>
-            <li><a href="#">Prices</a></li>
-            <li><a href="#">Tools/Software</a></li>
+            <li onclick="home()" href="#">Home</li>
+            <li onclick="Course()" href="#">Courses</li>
+            <li onclick="Software()" href="#">Tools/Software</li>
             <li class="dropdown">
-                <a href="#" class="dropbtn">Categories</a>
+                <a href="#" class="dropbtn">Categories <i class="fa-solid fa-arrow-down"></i></a>
                 <div class="dropdown-content" id="category-menu">
                     <!-- Categories will be dynamically added here -->
                 </div>
             </li>
             <i class="fa-solid fa-bell"></i>
         </ul>
+    </div>
+
+    <div id="product-modal" class="modal">
+        <div class="modal-content">
+            <!-- Modal content will be dynamically added here -->
+        </div>
     </div>
 
     <main>
@@ -41,6 +46,19 @@
     </main>
 
     <script src="script.js"></script>
+    <script>
+        function home() {
+            window.location.href = '../../public/index.html'
+        }
+
+        function Course() {
+            window.location.href = '../Courses/Courses.html'
+        }
+
+        function Software() {
+            window.location.href = './Store.html'
+        }
+    </script>
 </body>
 
 </html>

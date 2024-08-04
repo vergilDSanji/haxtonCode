@@ -21,6 +21,8 @@ body {
     line-height: 1.6;
 }
 
+
+
 h1, h2, h3 {
     color: var(--primary-accent);
 }
@@ -101,7 +103,7 @@ a:hover {
     cursor: pointer;
 }
 
-.Navbar .right button {
+button {
     background-color: var(--secondary-accent);
     color: var(--text-secondary-color);
     border: none;
@@ -111,7 +113,7 @@ a:hover {
     border-radius: 4px;
 }
 
-.Navbar .right button:hover {
+button:hover {
     background-color: var(--button-hover);
 }
 
